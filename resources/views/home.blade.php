@@ -2,6 +2,26 @@
 
 @section('content')
 
+<style>
+
+html, body {
+  background:#FAF9F8;
+
+
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .table{
+              color: black;
+            }
+
+            .table .done{
+              background-color: green;
+            }
+</style>
   <div class="col-2 ">
     
   </div>
@@ -26,9 +46,9 @@
                 <tbody>
                   <tr>
                     @if($task->done)
-                  <th scope="row"><del>{{$task->id}}</del></th>
-                  <td><del>{{$task->title}}</del></td>
-                  <td><del>{{$task->duedate}}</del></td>
+                  <th class="done"  scope="row"><del>{{$task->id}}</del></th>
+                  <td class="done"><del>{{$task->title}}</del></td>
+                  <td class="done"><del>{{$task->duedate}}</del></td>
                   @else
                   <th scope="row">{{$task->id}}</th>
                   <td>{{$task->title}}</td>
