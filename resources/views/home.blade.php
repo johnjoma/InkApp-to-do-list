@@ -25,9 +25,18 @@
             @foreach ($tasks as $task)
                 <tbody>
                   <tr>
+                    @if($task->done)
+                  <th scope="row"><del>{{$task->id}}</del></th>
+                  <td><del>{{$task->title}}</del></td>
+                  <td><del>{{$task->duedate}}</del></td>
+                  @else
                   <th scope="row">{{$task->id}}</th>
                   <td>{{$task->title}}</td>
                   <td>{{$task->duedate}}</td>
+
+
+                  @endif
+
                     <td>
 
                       {!!Form::open(['action'=>['TasksController@toggleDoneStatus', $task->id], 'method'=>'POST','class'=>'pb-1'])!!}
@@ -35,11 +44,11 @@
                         
                         @if ($task->done)
 
-                        <button class="btn btn-success" type="submit" aria-label="Undone" title="Mark as undone">
+                        <button class="btn btn-success" type="submit" aria-label="Done" title="Mark as done">
                           <i class="fa fa-thumbs-up"></i>
                           </button>
                         @else
-                        <button class="btn btn-warning" type="submit" aria-label="Done" title="Mark as done">
+                        <button class="btn btn-warning" type="submit" aria-label="undone" title="Mark as undone">
                           <i class="fa fa-hourglass-start"></i>
                             
                             </button>   
