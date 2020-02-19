@@ -71,7 +71,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">Tasks</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -89,7 +89,14 @@
                     <hr class="my-2">
                     <p>Ink it!</p>
                     <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="index" role="button">Login</a>
+                        @if (Route::has('login'))
+                        @auth
+                        <a class="btn btn-primary btn-lg" href="home" role="button">Go to Tasks</a>
+                        @else
+                        <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
+                        @endauth
+
+                        @endif
                     </p>
                 </div>
 

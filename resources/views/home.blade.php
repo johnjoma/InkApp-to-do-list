@@ -2,7 +2,6 @@
 
 @section('content')
 
-
   <div class="col-2 ">
     
   </div>
@@ -67,8 +66,8 @@
 @endif 
 
         </div>
-    <div class="col-2 p-4 bg-dark">
-      <button class="btn btn-warning mt-20">{{$tasks->links()}}</button>
+    <div class="col-2 p-4">
+      {{$tasks->links()}}
     </div>
-  
+    
 @endsection

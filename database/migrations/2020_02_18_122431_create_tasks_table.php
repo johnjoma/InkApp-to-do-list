@@ -19,6 +19,7 @@ class CreateTasksTable extends Migration
             $table->string('title');
             $table->string('duedate');
             $table->mediumText('description');
+            $table->boolean('done')->default(false);
             $table->timestamps();
 
         });

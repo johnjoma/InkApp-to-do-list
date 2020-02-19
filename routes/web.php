@@ -20,3 +20,10 @@ Route::get('index', function () {
 });
 
 Route::resource('tasks', 'TasksController');
+Route::put('/tasks/{task}', 'TasksController@update');
+
+Route::patch('/tasks/{task}', 'TasksController@toggleDoneStatus');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
