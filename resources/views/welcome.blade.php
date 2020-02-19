@@ -13,7 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background: rgb(2,0,36);
+                background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
