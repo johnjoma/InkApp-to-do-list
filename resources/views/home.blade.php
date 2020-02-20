@@ -65,11 +65,11 @@ html, body {
                         
                         @if ($task->done)
 
-                        <button class="btn btn-success" type="submit" aria-label="Done" title="Mark as undone">
+                        <button class="btn btn-success" type="submit" aria-label="Done" title="Mark task as undone">
                           <i class="fa fa-thumbs-up"></i>
                           </button>
                         @else
-                        <button class="btn btn-warning" type="submit" aria-label="undone" title="Mark as done">
+                        <button class="btn btn-warning" type="submit" aria-label="undone" title="Mark task as done">
                           <i class="fa fa-hourglass-start"></i>
                             
                             </button>   

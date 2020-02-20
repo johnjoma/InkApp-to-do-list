@@ -18,16 +18,16 @@
       
     <p class="card-text">{{$task->description}}</p>
       <hr>
-      <p><small>Due date:{{$task->duedate}} </small></p>
+      <p><small>Due date: {{date('F D, Y',strtotime($task->duedate))}}</small></p>
     </div>
     <div class="card-footer">
-    <a href="/tasks/{{$task->id}}/edit" class="btn btn-primary btn-lg m-2"><i class="fa fa-edit" aria-hidden="true"></i></a>
+    <a href="/tasks/{{$task->id}}/edit" class="btn btn-primary btn-lg m-2"><i class="fa fa-edit" aria-hidden="true" title="Edit Task"></i></a>
         
 
        {!!Form::open(['action'=>['TasksController@destroy', $task->id], 'method'=>'POST'])!!}
                         {{Form::hidden('_method','DELETE')}}
                         
-                        {{Form::button('<i class="fa fa-trash-o"></i>',['type'=>'submit','class'=>'btn btn-danger btn-lg']) }}
+                        {{Form::button('<i class="fa fa-trash-o"></i>',['type'=>'submit','class'=>'btn btn-danger btn-lg','title'=>'Delete Task']) }}
                       {!!Form::close()!!}
     </div>
 </div>
