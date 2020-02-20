@@ -20,6 +20,7 @@ html, body {
 
             .table .done{
               background-color: green;
+              text-decoration-style: wavy;
             }
 </style>
   <div class="col-2 ">
@@ -33,7 +34,7 @@ html, body {
             <table class="table table-hover pt-3">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                   
                     <th scope="col">Task</th>
                     <th scope="col">Due date</th>
                     <th scope="col">Actions</th>
@@ -46,13 +47,13 @@ html, body {
                 <tbody>
                   <tr>
                     @if($task->done)
-                  <th class="done"  scope="row"><del>{{$task->id}}</del></th>
+                  
                   <td class="done"><del>{{$task->title}}</del></td>
-                  <td class="done"><del>{{$task->duedate}}</del></td>
+                  <td class="done"><del>{{date('F D, Y',strtotime($task->duedate))}}</del></td>
                   @else
-                  <th scope="row">{{$task->id}}</th>
+                 
                   <td>{{$task->title}}</td>
-                  <td>{{$task->duedate}}</td>
+                  <td>{{date('F D, Y',strtotime($task->duedate))}}</td>
 
 
                   @endif
@@ -64,11 +65,11 @@ html, body {
                         
                         @if ($task->done)
 
-                        <button class="btn btn-success" type="submit" aria-label="Done" title="Mark as done">
+                        <button class="btn btn-success" type="submit" aria-label="Done" title="Mark as undone">
                           <i class="fa fa-thumbs-up"></i>
                           </button>
                         @else
-                        <button class="btn btn-warning" type="submit" aria-label="undone" title="Mark as undone">
+                        <button class="btn btn-warning" type="submit" aria-label="undone" title="Mark as done">
                           <i class="fa fa-hourglass-start"></i>
                             
                             </button>   
@@ -78,7 +79,7 @@ html, body {
 
                            
 
-                            <a href="/tasks/{{$task->id}}" class="btn btn-primary"><i class="fa fa-eye" ></i></a>
+                            <a href="/tasks/{{$task->id}}" class="btn btn-primary" title="View and modify task"><i class="fa fa-eye" ></i></a>
                                     
                                     
 
@@ -87,12 +88,14 @@ html, body {
                   
                 </tbody>
                 @endforeach
+
+                @else
+                 <p>No Tasks found</p>
+                 @endif 
+
               </table>
               
 
-@else
-<p>No Tasks found</p>
-@endif 
 
         </div>
     <div class="col-2 p-4">

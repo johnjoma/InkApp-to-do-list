@@ -22,7 +22,8 @@
 
             <div class="form-group">
                 {{Form::label('date','Due Date')}}
-                {{Form::date('duedate','',['class'=>'form-control','style'=>'width:12rem'])}}
+                {{Form::date('duedate','',['class'=>'form-control','id'=>'date','style'=>'width:12rem'])}}
+               
             </div>
 
             <div class="form-group">
