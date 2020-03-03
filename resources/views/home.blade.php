@@ -49,7 +49,7 @@ html, body {
                     @if($task->done)
                   
                   <td class="done"><del>{{$task->title}}</del></td>
-                  <td class="done"><del>{{date('F D, Y',strtotime($task->duedate))}}</del></td>
+                  <td class="done"><del></del></td>
                   @else
                  
                   <td>{{$task->title}}</td>
